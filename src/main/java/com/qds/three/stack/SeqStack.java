@@ -16,9 +16,33 @@ public class SeqStack<T> {
      */
     private Integer top;
 
-    public SeqStack(DataType<T>[] data) {
-        this.dataType = data;
-        this.top = -1;
+    /**
+     * 栈的大小
+     */
+    private Integer stackSize;
+
+    public SeqStack(Integer stackSize) {
+        this.stackSize = stackSize;
+        dataType = new DataType[stackSize];
+    }
+
+    public void push(T t) {
+        if (stackFull()) {
+            throw new RuntimeException("stack overflow");
+        }
+        // 压栈并栈顶指针+1
+        dataType[++top] = DataType.create(t);
+    }
+
+    public boolean stackFull() {
+        return top.equals(stackSize - 1);
+    }
+
+    /**
+     * 置空栈
+     */
+    public void initStack() {
+        top = -1;
     }
 
     /**
@@ -26,11 +50,11 @@ public class SeqStack<T> {
      *
      * @return
      */
-    public DataType<T> pop() {
+    public T pop() {
         if (stackEmpty()) {
             throw new RuntimeException("当前栈为空");
         }
-        return this.dataType[top--];
+        return this.dataType[top--].getData();
     }
 
     /**
@@ -42,12 +66,16 @@ public class SeqStack<T> {
         return this.top == -1;
     }
 
-    public void addDataType(DataType<T> dataType) {
-        this.dataType[++top] = dataType;
-    }
-
-    public Integer getTop() {
-        return top;
+    /**
+     * 取栈顶元素
+     *
+     * @return
+     */
+    public T getTop() {
+        if (stackEmpty()) {
+            throw new RuntimeException("stack empty");
+        }
+        return dataType[top].getData();
     }
 
 }

@@ -2,11 +2,14 @@ package com.qds.five.tree;
 
 import org.junit.Test;
 
-public class BinaryTreeTraversalTest {
+/**
+ * @see RecursiveTraversal
+ */
+public class RecursiveTraversalTest {
 
     /**
      * 后序递归遍历
-     * @see BinaryTreeTraversal#postorder(BinTNode)
+     * @see RecursiveTraversal#postorder(BinTNode)
      */
     @Test
     public void postorder() {
@@ -16,25 +19,25 @@ public class BinaryTreeTraversalTest {
     /**
      * 中序递归遍历
      *
-     * @see BinaryTreeTraversal#inorder(BinTNode)
+     * @see RecursiveTraversal#inorder(BinTNode)
      */
     @Test
     public void inorder() {
         String table = "(A(B(D,E),C(,F)))";
         BinTNode tree = GenerateBinaryTree.createTree(table);
-        BinaryTreeTraversal.inorder(tree);
+        RecursiveTraversal.inorder(tree);
     }
 
     /**
      * 前序递归遍历
      *
-     * @see BinaryTreeTraversal#preorder(BinTNode)
+     * @see RecursiveTraversal#preorder(BinTNode)
      */
     @Test
     public void preorder() {
         String table = "(A(B(D,E),C(,F)))";
         BinTNode tree = GenerateBinaryTree.createTree(table);
-        BinaryTreeTraversal.preorder(tree);
+        RecursiveTraversal.preorder(tree);
     }
 
 }

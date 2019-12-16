@@ -1,9 +1,11 @@
 package com.qds.five.tree;
 
 /**
+ * 二叉树的递归遍历
+ *
  * @author kong
  */
-public class BinaryTreeTraversal {
+public class RecursiveTraversal {
 
     /**
      * 后序递归遍历
