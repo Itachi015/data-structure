@@ -8,11 +8,11 @@ import org.junit.Test;
 public class NonRecursiveTraversalTest {
 
     /**
-     * @see NonRecursiveTraversal#transLevel(BinTNode)
+     * @see NonRecursiveTraversal#transLevel(BinTree)
      */
     @Test
     public void transLevel() {
-        BinTNode tree = getTree1();
+        BinTree tree = getTree1();
         NonRecursiveTraversal.transLevel(tree);
     }
 
@@ -21,36 +21,36 @@ public class NonRecursiveTraversalTest {
      *
      * @return
      */
-    public BinTNode getTree1() {
+    public BinTree getTree1() {
         String table = "(A(B(D,E),C(,F)))";
-        BinTNode tree = GenerateBinaryTree.createTree(table);
+        BinTree tree = GenerateBinaryTree.createTree(table);
         return tree;
     }
 
     @Test
     public void preorder() {
         String table = "(A(B(D,E),C(,F)))";
-        BinTNode tree = GenerateBinaryTree.createTree(table);
+        BinTree tree = GenerateBinaryTree.createTree(table);
         NonRecursiveTraversal.preorder(tree);
     }
 
     /**
-     * @see NonRecursiveTraversal#inorder2(BinTNode)
+     * @see NonRecursiveTraversal#inorder2(BinTree)
      */
     @Test
     public void inorder2() {
         String table = "(A(B(D,E),C(,F)))";
-        BinTNode tree = GenerateBinaryTree.createTree(table);
+        BinTree tree = GenerateBinaryTree.createTree(table);
         NonRecursiveTraversal.inorder2(tree);
     }
 
     /**
-     * @see NonRecursiveTraversal#inorder1(BinTNode)
+     * @see NonRecursiveTraversal#inorder1(BinTree)
      */
     @Test
     public void inorder1() {
         String table = "(A(B(D,E),C(,F)))";
-        BinTNode tree = GenerateBinaryTree.createTree(table);
+        BinTree tree = GenerateBinaryTree.createTree(table);
         NonRecursiveTraversal.inorder1(tree);
     }
 }

@@ -18,13 +18,13 @@ public class GenerateBinaryTree {
      *
      * @return
      */
-    public static BinTNode createBinTree(String table) {
+    public static BinTree createBinTree(String table) {
         int length = table.length();
-        BinTNode root = null;
+        BinTree root = null;
         // 队列
-        BinTNode[] queue = new BinTNode[64];
+        BinTree[] queue = new BinTree[64];
         // 新生成结点
-        BinTNode node;
+        BinTree node;
         // 双亲结点下标
         int front = 1;
         // 当前结点
@@ -34,7 +34,7 @@ public class GenerateBinaryTree {
             node = null;
             ch = table.charAt(i);
             if (ch != '@') {
-                node = new BinTNode(DataType.create(ch), null, null);
+                node = new BinTree(DataType.create(ch), null, null);
             }
             // 队尾指针+1 并加入队列
             queue[++rear] = node;
@@ -68,15 +68,15 @@ public class GenerateBinaryTree {
      * @param table 广义表
      * @return 二叉树
      */
-    public static BinTNode createTree(String table) {
+    public static BinTree createTree(String table) {
         // 广义表长度
         int length = table.length();
         // 栈的深度
-        BinTNode[] stack = new BinTNode[length];
-        BinTNode tree = null;
+        BinTree[] stack = new BinTree[length];
+        BinTree tree = null;
         int top = -1;
         int type = 0;
-        BinTNode root = null;
+        BinTree root = null;
         char ch;
         for (int i = 0; i < length; i++) {
             ch = table.charAt(i);
@@ -92,7 +92,7 @@ public class GenerateBinaryTree {
                     type = 2;
                     break;
                 default:
-                    tree = new BinTNode(DataType.create(ch), null, null);
+                    tree = new BinTree(DataType.create(ch), null, null);
                     if (root == null) {
                         root = tree;
                     } else {

@@ -12,7 +12,7 @@ public class RecursiveTraversal {
      *
      * @param node
      */
-    public static void postorder(BinTNode node) {
+    public static void postorder(BinTree node) {
         if (node != null) {
             inorder(node.getLeftTree());
             inorder(node.getRightTree());
@@ -25,7 +25,7 @@ public class RecursiveTraversal {
      *
      * @param node
      */
-    public static void inorder(BinTNode node) {
+    public static void inorder(BinTree node) {
         if (node != null) {
             inorder(node.getLeftTree());
             System.out.println(node.getDataType());
@@ -38,11 +38,11 @@ public class RecursiveTraversal {
      *
      * @param node
      */
-    public static void preorder(BinTNode node) {
+    public static void preorder(BinTree node) {
         if (node != null) {
             System.out.println(node.getDataType());
-            BinTNode leftTree = node.getLeftTree();
-            BinTNode rightTree = node.getRightTree();
+            BinTree leftTree = node.getLeftTree();
+            BinTree rightTree = node.getRightTree();
             preorder(leftTree);
             preorder(rightTree);
         }

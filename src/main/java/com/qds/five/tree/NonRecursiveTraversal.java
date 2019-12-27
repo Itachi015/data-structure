@@ -15,8 +15,8 @@ public class NonRecursiveTraversal {
      *
      * @param node
      */
-    public static void transLevel(BinTNode node) {
-        CirQueue<BinTNode> queue = new CirQueue<>(32);
+    public static void transLevel(BinTree node) {
+        CirQueue<BinTree> queue = new CirQueue<>(32);
         queue.initQueue();
         System.out.println(node.getDataType());
         queue.enQueue(node);
@@ -36,11 +36,11 @@ public class NonRecursiveTraversal {
     /**
      * 栈的前序递归遍历二叉树
      */
-    public static void preorder(BinTNode node) {
-        SeqStack<BinTNode> stack = new SeqStack<>(32);
+    public static void preorder(BinTree node) {
+        SeqStack<BinTree> stack = new SeqStack<>(32);
         stack.initStack();
         stack.push(node);
-        BinTNode p;
+        BinTree p;
         while (!stack.stackEmpty()) {
             p = stack.pop();
             if (p != null) {
@@ -57,11 +57,11 @@ public class NonRecursiveTraversal {
      *
      * @param node
      */
-    public static void inorder2(BinTNode node) {
-        BinTNode[] array = new BinTNode[32];
+    public static void inorder2(BinTree node) {
+        BinTree[] array = new BinTree[32];
         int top = 0;
         array[top] = node;
-        BinTNode leftTree;
+        BinTree leftTree;
         do {
             while (array[top] != null) {
                 leftTree = array[top].getLeftTree();
@@ -80,11 +80,11 @@ public class NonRecursiveTraversal {
      *
      * @param node
      */
-    public static void inorder1(BinTNode node) {
-        SeqStack<BinTNode> seqStack = new SeqStack<>(32);
+    public static void inorder1(BinTree node) {
+        SeqStack<BinTree> seqStack = new SeqStack<>(32);
         seqStack.initStack();
         seqStack.push(node);
-        BinTNode p;
+        BinTree p;
 
         while (!seqStack.stackEmpty()) {
             while (seqStack.getTop() != null) {

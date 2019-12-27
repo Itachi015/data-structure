@@ -5,12 +5,12 @@ import com.qds.five.stack.DataType;
 /**
  * @author kong
  */
-public class BinTNode {
+public class BinTree {
     private DataType dataType;
-    private BinTNode leftTree;
-    private BinTNode rightTree;
+    private BinTree leftTree;
+    private BinTree rightTree;
 
-    public BinTNode(DataType dataType, BinTNode leftTree, BinTNode rightTree) {
+    public BinTree(DataType dataType, BinTree leftTree, BinTree rightTree) {
         this.dataType = dataType;
         this.leftTree = leftTree;
         this.rightTree = rightTree;
@@ -24,19 +24,19 @@ public class BinTNode {
         this.dataType = dataType;
     }
 
-    public BinTNode getLeftTree() {
+    public BinTree getLeftTree() {
         return leftTree;
     }
 
-    public void setLeftTree(BinTNode leftTree) {
+    public void setLeftTree(BinTree leftTree) {
         this.leftTree = leftTree;
     }
 
-    public BinTNode getRightTree() {
+    public BinTree getRightTree() {
         return rightTree;
     }
 
-    public void setRightTree(BinTNode rightTree) {
+    public void setRightTree(BinTree rightTree) {
         this.rightTree = rightTree;
     }
 }

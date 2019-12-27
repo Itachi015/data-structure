@@ -9,7 +9,7 @@ public class RecursiveTraversalTest {
 
     /**
      * 后序递归遍历
-     * @see RecursiveTraversal#postorder(BinTNode)
+     * @see RecursiveTraversal#postorder(BinTree)
      */
     @Test
     public void postorder() {
@@ -19,24 +19,24 @@ public class RecursiveTraversalTest {
     /**
      * 中序递归遍历
      *
-     * @see RecursiveTraversal#inorder(BinTNode)
+     * @see RecursiveTraversal#inorder(BinTree)
      */
     @Test
     public void inorder() {
         String table = "(A(B(D,E),C(,F)))";
-        BinTNode tree = GenerateBinaryTree.createTree(table);
+        BinTree tree = GenerateBinaryTree.createTree(table);
         RecursiveTraversal.inorder(tree);
     }
 
     /**
      * 前序递归遍历
      *
-     * @see RecursiveTraversal#preorder(BinTNode)
+     * @see RecursiveTraversal#preorder(BinTree)
      */
     @Test
     public void preorder() {
         String table = "(A(B(D,E),C(,F)))";
-        BinTNode tree = GenerateBinaryTree.createTree(table);
+        BinTree tree = GenerateBinaryTree.createTree(table);
         RecursiveTraversal.preorder(tree);
     }
 

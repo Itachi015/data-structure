@@ -22,7 +22,7 @@ public class GenerateBinaryTreeTest {
     @Test
     public void createBinTree() {
         String table = "ABC@D@@@@EF";
-        BinTNode binTree = GenerateBinaryTree.createBinTree(table);
+        BinTree binTree = GenerateBinaryTree.createBinTree(table);
         System.out.println(binTree);
     }
 
